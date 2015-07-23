@@ -73,7 +73,7 @@ module.exports = function (grunt) {
           partials: '<%= config.src %>/partials/*.html'
         },
         files: {
-          '<%= config.dist %>/': ['<%= config.src %>/pages/*.html']
+          '<%= config.dist %>/': ['<%= config.src %>/pages/**/*.html']
         }
       }
     },
@@ -116,7 +116,7 @@ module.exports = function (grunt) {
 
     // Before generating any new files,
     // remove any previously-created files.
-    clean: ['<%= config.dist %>/**/*.{html,xml}']
+    clean: ['<%= config.dist %>/*']
 
   });
 
