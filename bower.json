@@ -2,7 +2,8 @@
   "name": "timeline-prototype",
   "version": "0.1.0",
   "dependencies": {
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "jqueryui": "~1.11.4"
   },
   "private": true
 }
