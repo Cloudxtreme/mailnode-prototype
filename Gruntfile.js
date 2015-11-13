@@ -30,8 +30,12 @@ module.exports = function (grunt) {
 
     watch: {
       assemble: {
-        files: ['<%= config.src %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
+        files: ['src/**/*.{md,html,yml}'],
         tasks: ['assemble']
+      },
+      sass: {
+        files: ['src/**/*.scss'],
+        tasks: ['sass']
       },
       livereload: {
         options: {
@@ -107,10 +111,17 @@ module.exports = function (grunt) {
     },
     copy: {
       images: {
-        expand: true,
-        cwd: 'src/assets/images/',
-        src: '**',
-        dest: 'dist/assets/img'
+        files: [{
+          expand: true,
+          cwd: 'src/assets/images/',
+          src: '**',
+          dest: 'dist/assets/img'
+        }, {
+          expand: true,
+          cwd: 'src/assets/scss/',
+          src: 'fonts/**',
+          dest: 'dist/assets/css/'
+        }]
       }
     },
 

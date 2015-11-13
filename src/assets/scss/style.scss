@@ -3,7 +3,21 @@
 @import "plugins";
 @import "themes";
 @import "themes/modern";
+@import "page/create-list";
 
-html, body, #page-content {
+html, body {
   height: 100%;
+  overflow: auto;
+}
+
+#page-content {
+  clear: both;
+}
+
+#page-container {
+  background-color: #fff;
+}
+
+.column-element {
+  padding: 10px 50px;
 }
