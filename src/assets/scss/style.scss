@@ -19,5 +19,20 @@ html, body {
 }
 
 .column-element {
-  padding: 10px 50px;
+  padding: 1vw 2vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .column-element {
+    padding: 10px 20px;
+  }
+}
+
+.glance {
+  .manage {
+    height: 50px;
+    td {
+      padding: 10px;
+    }
+  }
 }

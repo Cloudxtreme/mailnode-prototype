@@ -12,20 +12,23 @@ layout: default.html
       <h4>What would you like to do?</h4>
 
       <div class="row">
-        <div class="col-md-4 column-element">
+        <div class="col-md-4  column-element">
           <h4>Create a List</h4>
+
           <p>Create an email based audience </p>
-            <a href="create-list.html" class="btn btn-primary">Create Newsletter</a>
+          <a href="create-list.html" class="btn btn-primary">Create List</a>
         </div>
         <div class="col-md-4 column-element">
           <h4>Create subscription form</h4>
-          <p>Create a subscription form to add subscribers to a newsletter</p>
-          <a href="create-list.html" class="btn btn-primary">Create Newsletter</a>
+
+          <p>Create a subscription form to add subscribers to a list</p>
+          <a href="create-list.html" class="btn btn-primary">Generate Form</a>
         </div>
-        <div class="col-md-4 column-element">
+        <div class="col-md-4  column-element">
           <h4>Send a broadcast</h4>
+
           <p>Send an email to engage your audience</p>
-          <a href="create-list.html" class="btn btn-primary">Create Newsletter</a>
+          <a href="create-list.html" class="btn btn-primary">Send Broadcast</a>
         </div>
       </div>
     </div>
@@ -37,11 +40,19 @@ layout: default.html
         <div class="block-title">
           <h2><strong>At a Glance</strong></h2>
         </div>
-        <ul>
-          <li><a href="#">0</a> Newsletters</li>
-          <li><a href="#">0</a> Scheduled Broadcasts</li>
-          <li><a href="#">0</a> Subscribers</li>
-        </ul>
+        <table class="glance">
+          <tr>
+            <td colspan="10">
+              <a href="#">Newsletter 1</a> (<a href="#">500 subscribers</a>)
+            </td>
+          </tr>
+          <tr class="manage">
+            <td width="30" height="30">Manage:</td>
+            <td><a href="#">Autoresponders</a></td>
+            <td><a href="#">Subscribers</a></td>
+            <td></td>
+          </tr>
+        </table>
       </div>
     </div>
     <div class="col-md-6">
