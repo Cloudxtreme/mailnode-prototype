@@ -1,43 +1,133 @@
 ---
 layout: default.html
+scripts:
+- assets/js/pages/create-subscription.js
 ---
 
 <div class="block clearfix">
   <div class="block-title">
-    <h2>Generate Subscription Form</h2>
+    <h2>Create subscription form</h2>
   </div>
   <div class="block-content">
     <div class="form">
-      <div class="field clearfix">
-        <div class="col-md-3">
-          Select List:
+      <div class="form-group">
+        <div class="field clearfix">
+          <div class="col-md-3">
+            <label>Select List:</label>
+          </div>
+          <div class="col-md-9">
+            <select name="test" class="form-control">
+              {{#each lists}}
+                <option>{{.}}</option>
+              {{/each}}
+            </select>
+          </div>
         </div>
-        <div class="col-md-9">
-          <select name="test" class="form-control">
-            <option>Front-end engineer</option>
-          </select>
+        <div class="field clearfix">
+          <div class="col-md-3">
+            <label>Opt-in mode:</label>
+
+            <p>
+              <small>In single-opt in mode the user is immediately confirmed and are not required to veriy their email
+                to
+                start receiving emails sent to that list.
+              </small>
+            </p>
+          </div>
+          <div class="col-md-9">
+            <br/><br/><input type="checkbox" id="single" value="single" name="mode"/> Single Opt-in<br/>
+          </div>
         </div>
       </div>
       <div class="field clearfix">
         <div class="col-md-3">
-          Return URL:
+          <label>Return URL:</label>
+
           <p>
-            <small>URL to which the user is sent after they fill the subscription form</small>
+            <small>URL to which the user is sent after they fill the subscription form and their details are saved.
+            </small>
           </p>
         </div>
         <div class="col-md-9">
           <input type="text" class="form-control"/>
         </div>
       </div>
-      <div class="field clearfix">
+      <div class="field clearfix confirmed-url">
         <div class="col-md-3">
-          Confirmed URL:
+          <label>Confirmed URL:</label>
+
+          <p>
+            <small>URL where the user is sent after they confirm their email address by clicking on the confirmation
+              link.
+            </small>
+          </p>
         </div>
         <div class="col-md-9">
           <input type="text" class="form-control"/>
         </div>
       </div>
     </div>
-    <p></p>
+    <div class="form-group toggle-container customize">
+      <div class="field clearfix">
+        <div class="col-md-12">
+          <label><input type="checkbox" class="toggler"/> Customize subscription confirmation email</label>
+          <p></p>
+        </div>
+      </div>
+      <div class="toggled-form invisible">
+         {{> new-email}}
+      </div>
+    </div>
+    <div class="form-group toggle-container customize">
+      <div class="field clearfix ">
+        <div class="col-md-12">
+          <label><input class="toggler" type="checkbox"/> Customize subscription verification email</label>
+
+          <p></p>
+        </div>
+      </div>
+      <div class="toggled-form invisible">
+        {{>new-email}}
+      </div>
+    </div>
+    <div class="form-group hidden welcome-email">
+      <div class="col-md-12">
+        <input type="checkbox" class="welcome-check" value="1"/> Send a welcome email
+      </div>
+      <br/>
+      <br/>
+      {{>new-email}}
+      <div class="welcome-email-config">
+        <div class="toggled-form ">
+          <div class="field clearfix">
+            <div class="col-md-3">
+              Subject:
+            </div>
+            <div class="col-md-9">
+              <input type="text" name="list" class="form-control"/>
+            </div>
+          </div>
+          <div class="field clearfix">
+            <div class="col-md-3">
+              Body:
+            </div>
+          </div>
+          <div class="field clearfix">
+            <div class="col-md-12">
+              <textarea rows="10" name="confirmation-email" class="form-control ckeditor"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="field clearfix">
+    <div class="col-md-12">
+      <input type="submit" value="Create Form" class="btn btn-primary"/>
+      <a href="index.html" class="btn btn-default">Cancel</a>
+    </div>
+  </div>
+  <p></p>
 </div>
+
+<script src="http://cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>

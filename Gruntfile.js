@@ -121,6 +121,11 @@ module.exports = function (grunt) {
           cwd: 'src/assets/scss/',
           src: 'fonts/**',
           dest: 'dist/assets/css/'
+        }, {
+          expand: true,
+          cwd: 'src/assets/js/',
+          src: 'pages/**',
+          dest: 'dist/assets/js/'
         }]
       }
     },
