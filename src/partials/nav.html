@@ -13,6 +13,8 @@
       <li><a href="create-list.html"><i class="gi gi-file"></i> List</a></li>
       <li><a href="index.html"><i class="fa fa-bolt"></i> Autoresponder</a></li>
       <li class="divider"></li>
+      <li><a href="create-subscription-form.html"><i class="fa fa-code"></i> Subscription Form</a></li>
+      <li class="divider"></li>
     </ul>
   </li>
   <li class="dropdown">
@@ -28,7 +30,9 @@
     <a href="index.html"  class="dropdown-toggle" data-toggle="dropdown"><i class="gi gi-file"></i> Lists
       <i class="fa fa-angle-down"></i></a>
     <ul class="dropdown-menu">
-      <li><a href="index.html"><i class="gi gi-file"></i> Front-end developers</a></li>
+      {{#each lists}}
+        <li><a href="index.html"><i class="gi gi-file"></i> {{.}} </a></li>
+      {{/each}}
     </ul>
   </li>
   <li>

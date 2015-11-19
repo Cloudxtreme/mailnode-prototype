@@ -5,6 +5,7 @@
 @import "themes/modern";
 @import "page/create-list";
 
+$sidebarWidth: 200px;
 html, body {
   height: 100%;
   overflow: auto;
@@ -16,6 +17,17 @@ html, body {
 
 #page-container {
   background-color: #fff;
+  width: calc(100% - #{$sidebarWidth});
+  float: right;
+}
+.sidebar {
+  width: $sidebarWidth;
+}
+
+.topnav {
+  height: 40px;
+  background-color: #000;
+  display: block;
 }
 
 .column-element {
